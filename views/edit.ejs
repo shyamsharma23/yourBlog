@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/users/<%= user._id %>/posts/<%= post._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="title">Title</label>
+            <input name="title" id="title" value="<%= post.title %>">
+        </div>
+        <div>
+            <lable for="body">Body</lable>
+            <input name="body" id="body" value="<%= post.body %>">
+        </div>
+        <button>Save Changes</button>
+        <a href="/users/<%= user._id %>/posts">Back to Posts</a>
+    </form>
+</body>
+
+</html>

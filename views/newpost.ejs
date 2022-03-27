@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="/users/<%= user._id %>/posts" method="POST">
+        <input name="title" , placeholder="Title">
+        <textarea name="body" , rows="10" , placeholder="Type text here"></textarea>
+        <button>Submit</button>
+    </form>
+    <div>
+        <% for(let item of user.items ){ %>
+            <h1>
+                <%= item.title %>
+            </h1>
+            <p>
+                <%= item.body %>
+            </p>
+         <a href="/users/<%=user._id%>/posts/<%=item._id%>">Edit</a>
+         <% } %> 
+    </div>
+    <a href="/users/<%= user._id %>">Back to Home</a>
+    <a href="/logout">Log out</a>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1><%= post.title %></h1>
+    <p><%= post.body %></p>
+    <p><%= post.reviews.discription %></p>
+    <form action="/users/<%= user._id %>/post/<%= post._id %>" method="POST">
+        <textarea rows="6" name="description" placeholder="reviews"></textarea>
+        <button>Submit</button>
+    </form>
+    <% for(let review of post.reviews) {%> 
+    <div> 
+        <%= review.description %>
+        <%= review.author %>  
+    </div>
+    <% } %> 
+    <a href="/users/<%= user._id %>">Back to home</a>
+    
+</body>
+</html>
