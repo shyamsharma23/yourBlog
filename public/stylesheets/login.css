@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    width: 100%;
+    /* background: url('./images/background.jpg') no-repeat; */
+
+}
+
+header{
+    width: 100%;
+    background-color: rgb(80, 80, 206);
+}
+
+.logo{
+    color: white;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    margin: 0 auto;
+
+}
+
+.list{
+    list-style: none;
+    padding: 0;
+    /* border: red 2px solid; */
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+.list a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+
+}
+/* form */
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    /* border: red 2px solid; */
+}
+
+.form input{
+    margin-top: 1em;
+    text-align: center;
+    padding: 0.6em;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 40%;
+    /* border: red 2px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+
+}
+
+.btn{
+    border: none;
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+    padding: 0.4em 1em;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.btn-two{
+    width: 65%;
+    text-align: center;
+    margin-top: 0;
+}
+
+.btn:hover{
+    background-color: white;
+    color: royalblue;
+}

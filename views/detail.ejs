@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/detail.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Detail of <%= mainUser.firstname %> </h1>
-    <ul>
-<li><%= mainUser.firstname %></li>
-<li><%= mainUser.lastname %></li>
-<li><%= mainUser.username %></li>
-<li><%= mainUser.email %></li>
+    <header>
+        <nav class="nav-bar">
+            <h2 class="logo">yourBlog</h2>
+            <ul class="list">
+                <li><a href="/users/<%= mainUser._id %>">Home</a></li>
+                <li><a href="/users/<%= mainUser.id %>/posts">My Posts</a></li>
+                <li><a href="/logout">logout</a></li>
 
 
-</ul>
+            </ul>
+        </nav>
+    </header>
+    <div class="greeting">
+        <h1>Hello <%= mainUser.firstname %>! this is your Dashboard </h1>
+        <p>You can find your posts in the <span class="link">My Posts</span> link in the nav bar.</p>
+        <p>Below is the list of blog posts by other users. You can view them and leave feedback. </p>
 
-<% for(let post of author){ %>
-    <div>
-        <%= post.title %> 
     </div>
-    <p>By <%= post.user.firstname %> </p>
-    <a href="/users/<%= mainUser._id %>/post/<%= post._id %>">View</a>
-    <% } %> 
 
-    
 
-<a href="/users/<%= mainUser.id %>/posts ">Posts</a>
-<a href="/logout">Log out</a>
+
+    <% for(let post of author){ %>
+        <div class="wrapper">
+        
+            <h2 class="title">    <%= post.title %></h2>
+            <a href="/users/<%= mainUser._id %>/post/<%= post._id %>">View Post</a>
+        </div>
+        <% } %>
+
+
+
 </body>
+
 </html>

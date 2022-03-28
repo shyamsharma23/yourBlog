@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/showpost.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
 
-    <h1><%= post.title %></h1>
-    <p><%= post.body %></p>
-    <p><%= post.reviews.discription %></p>
-    <form action="/users/<%= user._id %>/post/<%= post._id %>" method="POST">
-        <textarea rows="6" name="description" placeholder="reviews"></textarea>
-        <button>Submit</button>
-    </form>
-    <% for(let review of post.reviews) {%> 
-    <div> 
-        <%= review.description %>
-        <%= review.author %>  
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2 class="logo">yourBlog</h2>
+            <ul class="list">
+                <li><a href="/users/<%= user._id %>">Home</a></li>
+                <li><a href="/users/<%= user._id %>/posts">My Posts</a></li>
+                <li><a href="/logout">logout</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="title">
+            <%= post.title %>
+        </h1>
+        <p class="body">
+            <%= post.body %>
+        </p>
+        <p>-written by <%= post.user.firstname %>
+        </p>
     </div>
-    <% } %> 
-    <a href="/users/<%= user._id %>">Back to home</a>
-    
+    <p>
+        <%= post.reviews.discription %>
+    </p>
+    <form action="/users/<%= user._id %>/post/<%= post._id %>" method="POST" class="form">
+        <textarea rows="6" name="description" placeholder="reviews"></textarea>
+        <button class="btn">Submit</button>
+    </form>
+    <h2 class="title-review">Reviews</h2>
+    <% for(let review of post.reviews) {%>
+        <div class="wrapper">
+            <p>
+                <%= review.description %>
+            </p>
+            <p class="author">
+                Posted by: <%= review.author %>
+            </p>
+        </div>
+
+        <% } %>
+
 </body>
+
 </html>

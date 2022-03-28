@@ -23,7 +23,7 @@ header{
 .list{
     list-style: none;
     padding: 0;
-    border: red 2px solid;
+    /* border: red 2px solid; */
     display: flex;
     width: 30%;
     justify-content: space-between;
@@ -40,6 +40,7 @@ header{
 
 .light{
     font-weight: 300;
+    font-size: 2.5rem;
 }
 .block{
     display: block;
@@ -49,7 +50,7 @@ header{
 .center{
     width: 65%;
     margin: 0 auto;
-    border: red 2px solid;
+    /* border: red 2px solid; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,5 +58,5 @@ header{
     height: 50vh;
 }
 .text{
-    border: red 2px solid;
+    /* border: red 2px solid; */
 }

@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/login.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <form action="/login" method="POST">
-        <input name="username" placeholder="Username" required>
-        <input name="password" placeholder="Password" required>
-        <button>Log in</button>
-    </form>
 
-    <p>Or</p>
-    <a href="users/new">Sign up</a>
-    
+<body>
+    <header>
+        <nav class="nav-bar">
+            <h2 class="logo">yourBlog</h2>
+            <ul class="list">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/users/new">Sign up</a></li>
+                <li><a href="/login">Log in</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+    <section class="wrapper">
+        <form action="/login" method="POST" class="form">
+            <input name="username" placeholder="Username" required>
+            <input name="password" placeholder="Password" required>
+            <button class="btn">Log in</button>
+        </form>
+
+        <p>Or</p>
+        <a href="users/new" class="btn btn-two">Sign up</a>
+    </section>
+
 </body>
+
 </html>
